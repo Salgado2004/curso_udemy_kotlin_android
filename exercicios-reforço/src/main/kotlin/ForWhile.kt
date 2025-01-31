@@ -45,12 +45,7 @@ fun main() {
     println("Soma de 1 a 500: $soma")
 
     // for #5
-    val n = 5
-    for(i in 1..n){
-        for(j in 1..i)
-            print("#")
-        println()
-    }
+    piramide("5")
 
     // while #1
     var caixaDagua = 0
@@ -85,13 +80,22 @@ fun main() {
     println()
 
     // while #4
-    println(verificador("xxooox"))
-    println(verificador("wdsfgkdnowsid"))
-    println(verificador("xxxxo"))
-    println(verificador("oooooooooxzzzzzz"))
+    println(verificadorString("xxooox"))
+    println(verificadorString("wdsfgkdnowsid"))
+    println(verificadorString("xxxxo"))
+    println(verificadorString("oooooooooxzzzzzz"))
 }
 
-fun verificador(texto: String): Boolean {
+fun piramide(entrada: String) {
+    val n = entrada.toInt()
+    for(i in 1..n){
+        for(j in 1..i)
+            print("#")
+        println()
+    }
+}
+
+fun verificadorString(texto: String): Boolean {
     var i = 0
     var countX = 0
     var countO = 0

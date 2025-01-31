@@ -66,3 +66,22 @@ fun portaria() {
 
     println(mensagem)
 }
+fun portaria2(idade: Int, tpConvite: String, cod: String): String {
+    var mensagem = "Negado. Convite inválido"
+
+    if (idade < 18) {
+        mensagem = "Negado. Menores de idade não são permitidos"
+    } else {
+        when (tpConvite) {
+            "premium", "luxo" ->
+                if (cod.startsWith("XL"))
+                    mensagem = "Welcome :)"
+
+            "comum" ->
+                if (cod.startsWith("XT"))
+                    mensagem = "Welcome :)"
+        }
+    }
+
+    return mensagem
+}
